@@ -1,0 +1,67 @@
+.backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(0.5rem);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  top: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  scroll-margin-top: 0;
+}
+.overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #00000046;
+  height: 30rem;
+  width: 30rem;
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  padding: 0.5rem;
+  animation: slider 0.2s ease-out 0s 1;
+}
+
+@keyframes slider {
+  from {
+    transform: translate(-50%, -70%);
+  }
+  to {
+    transform: translate(-50%, -50%);
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(212, 212, 212, 0.5);
+  height: 100%;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+@media screen and (max-width: 35rem) {
+  .overlay {
+    height: 20rem;
+    width: 20rem;
+  }
+}
+@media screen and (max-width: 370px) {
+  .overlay {
+    height: 90vw;
+    width: 90vw;
+  }
+}

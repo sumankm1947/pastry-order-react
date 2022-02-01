@@ -1,0 +1,24 @@
+.item-container {
+  position: relative;
+  /* height: 270vh; */
+}
+
+.items {
+  position: absolute;
+  list-style-type: none;
+  /* height: 100vh; */
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(calc(var(--card-width) + 5rem), 1fr)
+  );
+  gap: 1rem;
+  padding: 1rem;
+}
+
+@media screen and (max-width: 460px) {
+  .items {
+    padding: 0;
+  }
+}

@@ -1,0 +1,134 @@
+.navbar {
+  background-color: var(--header-color);
+  height: 4rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo,
+.cart {
+  margin: 0rem 4rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.logo {
+  font-weight: bolder;
+  text-transform: uppercase;
+  cursor: pointer;
+  user-select: none;
+}
+
+.cart {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  padding: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.cart:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.cart-icon {
+  height: 2rem;
+  width: 2rem;
+  margin: 0rem 1rem;
+}
+
+.cart > span {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-right: 1rem;
+}
+
+.cart-item-number {
+  background-color: white;
+  height: 1.8rem;
+  width: 1.8rem;
+  border-radius: 50%;
+  position: absolute;
+  right: -0.5rem;
+  bottom: -0.5rem;
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--header-color);
+}
+
+.img {
+  height: 300px;
+  /* width: 100vw; */
+  clip-path: polygon(100% 0, 100% 84%, 74% 90%, 18% 80%, 0 88%, 0 0);
+  overflow: hidden;
+  position: relative;
+}
+
+.welcome-msg {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: white;
+  height: 200px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  padding: 0rem 3rem;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.welcome-msg > h1 {
+  font-size: 3rem;
+}
+.welcome-msg > p {
+  font-size: 1.1rem;
+}
+
+@media screen and (max-width: 900px) {
+  .logo,
+  .cart {
+    margin: 0rem 2rem;
+  }
+  .welcome-msg > h1 {
+    font-size: 1.5rem;
+  }
+  .welcome-msg > p {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 450px) {
+  .logo,
+  .cart {
+    margin: 0rem 1rem;
+  }
+  .logo {
+    padding: 0.8rem;
+  }
+}
+@media screen and (max-width: 320px) {
+  .logo,
+  .cart {
+    margin: 0rem 0.5rem;
+    font-size: 0.9rem;
+  }
+  .logo {
+    padding: 0.6rem;
+  }
+  .cart {
+    padding: 0.3rem;
+  }
+  .cart > span {
+    font-size: 0.9rem;
+  }
+}

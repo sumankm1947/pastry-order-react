@@ -1,0 +1,158 @@
+.card {
+  color: rgb(48, 48, 48);
+  /* background-color: red; */
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(var(--card-height) + 20px);
+  display: flex;
+  flex-direction: column;
+  display: block;
+  margin: 1rem auto;
+}
+
+.card-content {
+  background-color: white;
+  width: var(--card-width);
+  height: var(--card-height);
+  text-align: center;
+  transition: transform 3s;
+  transform-style: preserve-3d;
+}
+
+.card-content:hover {
+  transform: rotateY(0.5turn);
+}
+
+.front,
+.back {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  display: grid;
+  align-content: center;
+}
+
+.front {
+  /* background-color: red; */
+  /* background-image: url("../../images/cookies.jpg"); */
+
+  background-size: cover;
+
+  color: white;
+}
+
+.front > img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.front::after {
+  content: "";
+  position: absolute;
+  margin: 1rem;
+
+  transform: var(--level-one);
+  height: 90%;
+  width: 90%;
+  border: 4px solid white;
+}
+
+.card-title {
+  transform: var(--level-three);
+  padding: 0 2rem;
+  font-size: 2rem;
+  text-transform: capitalize;
+  font-weight: 900;
+}
+.card-subtitle,
+.price {
+  transform: var(--level-one);
+  padding: 0.5rem 2rem;
+  font-size: 0.9rem;
+}
+.price {
+  font-size: 1.1rem;
+}
+
+.back {
+  transform: rotateY(0.5turn);
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.description {
+  color: white;
+  transform: var(--level-two);
+  padding: 1rem;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.input {
+  color: white;
+  margin: 1rem;
+  padding-bottom: 0.5rem;
+}
+.input-btn {
+  height: 2rem;
+  width: 7rem;
+  padding: 0.2rem;
+  border: none;
+  background-color: rgba(204, 53, 53, 0.5);
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.error {
+  position: absolute;
+  color: rgb(255, 0, 0);
+  font-weight: 700;
+  font-size: 0.8rem;
+  bottom: -0.6rem;
+  right: 0;
+}
+
+@media screen and (max-width: 460px) {
+  .card {
+    height: 90vw;
+    width: 90vw;
+    margin: 0 5vw;
+  }
+  .card-content {
+    height: 80%;
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 320px) {
+  .form {
+    font-size: 0.9rem;
+  }
+  .input-btn {
+    height: 30px;
+    width: 80px;
+    padding: 0;
+    font-size: 0.8rem;
+  }
+}
